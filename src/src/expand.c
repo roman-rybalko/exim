@@ -570,6 +570,7 @@ static var_entry var_table[] = {
   { "parent_domain",       vtype_stringptr,   &deliver_domain_parent },
   { "parent_local_part",   vtype_stringptr,   &deliver_localpart_parent },
   { "pid",                 vtype_pid,         NULL },
+  { "port",                vtype_int,         &deliver_port },
   { "primary_hostname",    vtype_stringptr,   &primary_hostname },
 #ifdef EXPERIMENTAL_PROXY
   { "proxy_host_address",  vtype_stringptr,   &proxy_host_address },

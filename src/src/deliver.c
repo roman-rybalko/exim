@@ -141,11 +141,13 @@ the first address. */
 if (addr->host_list == NULL)
   {
   deliver_host = deliver_host_address = US"";
+  deliver_port = 0;
   }
 else
   {
   deliver_host = addr->host_list->name;
   deliver_host_address = addr->host_list->address;
+  deliver_port = (addr->host_list->port == PORT_NONE) ? 25 : addr->host_list->port;
   }
 
 deliver_recipients = addr;

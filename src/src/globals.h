@@ -339,6 +339,7 @@ extern uschar *deliver_localpart_suffix; /* The stripped suffix, if any */
 extern BOOL    deliver_force_thaw;     /* TRUE to force thaw in queue run */
 extern BOOL    deliver_manual_thaw;    /* TRUE if manually thawed */
 extern uschar *deliver_out_buffer;     /* Buffer for copying file */
+extern int     deliver_port;           /* Host-specific port for delivery */
 extern int     deliver_queue_load_max; /* Different value for queue running */
 extern address_item *deliver_recipients; /* Current set of addresses */
 extern uschar *deliver_selectstring;   /* For selecting by recipient */
