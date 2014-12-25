@@ -588,6 +588,7 @@ uschar *deliver_localpart_suffix = NULL;
 BOOL    deliver_force_thaw     = FALSE;
 BOOL    deliver_manual_thaw    = FALSE;
 uschar *deliver_out_buffer     = NULL;
+int     deliver_port           = -1;
 int     deliver_queue_load_max = -1;
 address_item  *deliver_recipients = NULL;
 uschar *deliver_selectstring   = NULL;

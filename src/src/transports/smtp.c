@@ -3035,6 +3035,7 @@ for (cutoff_retry = 0; expired &&
 
     deliver_host = host->name;
     deliver_host_address = host->address;
+    deliver_port = (host->port == PORT_NONE) ? port : host->port;
     lookup_dnssec_authenticated = host->dnssec == DS_YES ? US"yes"
 				: host->dnssec == DS_NO ? US"no"
 				: US"";
