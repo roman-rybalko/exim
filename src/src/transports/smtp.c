@@ -2604,6 +2604,7 @@ for (cutoff_retry = 0; expired &&
 
     deliver_host = host->name;
     deliver_host_address = host->address;
+    smtp_host_specific_port = (host->port == PORT_NONE) ? 0 : host->port;
 
     /* Set up a string for adding to the retry key if the port number is not
     the standard SMTP port. A host may have its own port setting that overrides

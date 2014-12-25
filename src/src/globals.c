@@ -1121,6 +1121,7 @@ int     smtp_mailcmd_count     = 0;
 FILE   *smtp_out               = NULL;
 uschar *smtp_etrn_command      = NULL;
 BOOL    smtp_etrn_serialize    = TRUE;
+int     smtp_host_specific_port = 0;
 int     smtp_max_synprot_errors= 3;
 int     smtp_max_unknown_commands = 3;
 uschar *smtp_notquit_reason    = NULL;

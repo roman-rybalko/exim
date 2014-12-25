@@ -702,6 +702,7 @@ extern double  smtp_delay_rcpt;        /* Current RCPT delay */
 extern BOOL    smtp_enforce_sync;      /* Enforce sync rules */
 extern uschar *smtp_etrn_command;      /* Command to run */
 extern BOOL    smtp_etrn_serialize;    /* Only one at once */
+extern int     smtp_host_specific_port; /* Custom port for SMTP delivery */
 extern FILE   *smtp_in;                /* Incoming SMTP input file */
 extern int     smtp_load_reserve;      /* Only from reserved if load > this */
 extern int     smtp_mailcmd_count;     /* Count of MAIL commands */
