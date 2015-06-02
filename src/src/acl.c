@@ -4319,11 +4319,7 @@ sender_verified_failed = NULL;
 ratelimiters_cmd = NULL;
 log_reject_target = LOG_MAIN|LOG_REJECT;
 
-#ifndef DISABLE_PRDR
-if (where == ACL_WHERE_RCPT || where == ACL_WHERE_PRDR )
-#else
-if (where == ACL_WHERE_RCPT )
-#endif
+if (recipient)
   {
   adb = address_defaults;
   addr = &adb;

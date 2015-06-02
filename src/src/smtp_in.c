@@ -4484,18 +4484,17 @@ while (done <= 0)
 
     case VRFY_CMD:
     HAD(SCH_VRFY);
-    rc = acl_check(ACL_WHERE_VRFY, NULL, acl_smtp_vrfy, &user_msg, &log_msg);
+    /* rfc821_domains = TRUE; << no longer needed */
+    recipient = parse_extract_address(smtp_cmd_data, &errmess, &start, &end,
+      &recipient_domain, FALSE);
+    /* rfc821_domains = FALSE; << no longer needed */
+    rc = acl_check(ACL_WHERE_VRFY, recipient, acl_smtp_vrfy, &user_msg, &log_msg);
     if (rc != OK)
       done = smtp_handle_acl_fail(ACL_WHERE_VRFY, rc, user_msg, log_msg);
     else
       {
-      uschar *address;
+      uschar *address = recipient;
       uschar *s = NULL;
-
-      /* rfc821_domains = TRUE; << no longer needed */
-      address = parse_extract_address(smtp_cmd_data, &errmess, &start, &end,
-        &recipient_domain, FALSE);
-      /* rfc821_domains = FALSE; << no longer needed */
 
       if (address == NULL)
         s = string_sprintf("501 %s", errmess);
